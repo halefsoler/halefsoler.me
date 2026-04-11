@@ -6,6 +6,18 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 
 Current primary web artifact is `artifacts/halefsoler-brand`, a React/Vite personal brand site for `halefsoler.io`. It is a single-page personal brand homepage inspired by premium AI/product company marketing pages and includes personal positioning, startups, metrics, projects, course promotion, blog/newsletter, social links, and a newsletter subscription form.
 
+## Branding
+
+- **Logo mark**: `/HS` in JetBrains Mono (monospace), the slash `/` is green (#00D9A3), "HS" is white
+- **Primary Green**: `#00D9A3` — CTAs, key moments, primary buttons
+- **Tech Purple**: `#7C3AED` — accents, gradients, accent color
+- **Deep Navy**: `#0F172A` — backgrounds (dark mode default), headlines
+- **Soft Gray**: `#94A3B8` — body text, supporting elements
+- **Fonts**: Inter (sans), Instrument Serif (display/headings), JetBrains Mono (mono/logo)
+- **Style**: Glassmorphism cards, gradient orbs (green/purple), Lucide icons at 1.5px stroke
+- **Always dark mode** (`defaultTheme="dark"` in ThemeProvider)
+- **Language**: Portuguese (pt-BR)
+
 ## Stack
 
 - **Monorepo tool**: pnpm workspaces
