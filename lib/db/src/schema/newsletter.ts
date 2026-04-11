@@ -1,0 +1,21 @@
+import { createInsertSchema } from "drizzle-zod";
+import { pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
+import { z } from "zod/v4";
+
+export const newsletterSubscribersTable = pgTable("newsletter_subscribers", {
+  id: serial("id").primaryKey(),
+  email: text("email").notNull().unique(),
+  name: text("name"),
+  source: text("source").notNull().default("halefsoler.io"),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const insertNewsletterSubscriberSchema = createInsertSchema(
+  newsletterSubscribersTable,
+).omit({ id: true, createdAt: true });
+
+export type InsertNewsletterSubscriber = z.infer<
+  typeof insertNewsletterSubscriberSchema
+>;
+export type NewsletterSubscriber =
+  typeof newsletterSubscribersTable.$inferSelect;

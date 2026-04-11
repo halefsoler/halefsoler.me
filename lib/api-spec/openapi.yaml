@@ -1,6 +1,5 @@
 openapi: 3.1.0
 info:
-  # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
   description: API specification
@@ -10,6 +9,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: brand
+    description: Personal brand operations
 paths:
   /healthz:
     get:
@@ -24,6 +25,42 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /brand-home:
+    get:
+      operationId: getBrandHome
+      tags: [brand]
+      summary: Get personal brand homepage content
+      responses:
+        "200":
+          description: Personal brand homepage content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BrandHome"
+  /newsletter:
+    post:
+      operationId: subscribeNewsletter
+      tags: [brand]
+      summary: Subscribe to newsletter
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NewsletterSubscriptionInput"
+      responses:
+        "200":
+          description: Newsletter subscription created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NewsletterSubscription"
+        "400":
+          description: Invalid subscription input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +70,196 @@ components:
           type: string
       required:
         - status
-
+    Metric:
+      type: object
+      properties:
+        label:
+          type: string
+        value:
+          type: string
+        detail:
+          type: string
+      required:
+        - label
+        - value
+        - detail
+    Startup:
+      type: object
+      properties:
+        name:
+          type: string
+        role:
+          type: string
+        period:
+          type: string
+        summary:
+          type: string
+        outcomes:
+          type: array
+          items:
+            type: string
+      required:
+        - name
+        - role
+        - period
+        - summary
+        - outcomes
+    Project:
+      type: object
+      properties:
+        name:
+          type: string
+        category:
+          type: string
+        year:
+          type: string
+        description:
+          type: string
+        impact:
+          type: string
+      required:
+        - name
+        - category
+        - year
+        - description
+        - impact
+    Course:
+      type: object
+      properties:
+        title:
+          type: string
+        subtitle:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+        modules:
+          type: array
+          items:
+            type: string
+      required:
+        - title
+        - subtitle
+        - description
+        - status
+        - modules
+    BlogPost:
+      type: object
+      properties:
+        slug:
+          type: string
+        title:
+          type: string
+        excerpt:
+          type: string
+        category:
+          type: string
+        publishedAt:
+          type: string
+        readTime:
+          type: string
+      required:
+        - slug
+        - title
+        - excerpt
+        - category
+        - publishedAt
+        - readTime
+    SocialLink:
+      type: object
+      properties:
+        label:
+          type: string
+        url:
+          type: string
+      required:
+        - label
+        - url
+    BrandHome:
+      type: object
+      properties:
+        profile:
+          type: object
+          properties:
+            name:
+              type: string
+            domain:
+              type: string
+            headline:
+              type: string
+            bio:
+              type: string
+          required:
+            - name
+            - domain
+            - headline
+            - bio
+        metrics:
+          type: array
+          items:
+            $ref: "#/components/schemas/Metric"
+        startups:
+          type: array
+          items:
+            $ref: "#/components/schemas/Startup"
+        projects:
+          type: array
+          items:
+            $ref: "#/components/schemas/Project"
+        course:
+          $ref: "#/components/schemas/Course"
+        blogPosts:
+          type: array
+          items:
+            $ref: "#/components/schemas/BlogPost"
+        socials:
+          type: array
+          items:
+            $ref: "#/components/schemas/SocialLink"
+      required:
+        - profile
+        - metrics
+        - startups
+        - projects
+        - course
+        - blogPosts
+        - socials
+    NewsletterSubscriptionInput:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+        source:
+          type: string
+      required:
+        - email
+    NewsletterSubscription:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+        name:
+          type: string
+          nullable: true
+        source:
+          type: string
+        createdAt:
+          type: string
+      required:
+        - id
+        - email
+        - source
+        - createdAt
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error

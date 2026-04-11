@@ -8,3 +8,82 @@
 export interface HealthStatus {
   status: string;
 }
+
+export interface Metric {
+  label: string;
+  value: string;
+  detail: string;
+}
+
+export interface Startup {
+  name: string;
+  role: string;
+  period: string;
+  summary: string;
+  outcomes: string[];
+}
+
+export interface Project {
+  name: string;
+  category: string;
+  year: string;
+  description: string;
+  impact: string;
+}
+
+export interface Course {
+  title: string;
+  subtitle: string;
+  description: string;
+  status: string;
+  modules: string[];
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  publishedAt: string;
+  readTime: string;
+}
+
+export interface SocialLink {
+  label: string;
+  url: string;
+}
+
+export type BrandHomeProfile = {
+  name: string;
+  domain: string;
+  headline: string;
+  bio: string;
+};
+
+export interface BrandHome {
+  profile: BrandHomeProfile;
+  metrics: Metric[];
+  startups: Startup[];
+  projects: Project[];
+  course: Course;
+  blogPosts: BlogPost[];
+  socials: SocialLink[];
+}
+
+export interface NewsletterSubscriptionInput {
+  email: string;
+  name?: string;
+  source?: string;
+}
+
+export interface NewsletterSubscription {
+  id: number;
+  email: string;
+  name?: string | null;
+  source: string;
+  createdAt: string;
+}
+
+export interface ErrorResponse {
+  error: string;
+}

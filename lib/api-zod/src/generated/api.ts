@@ -14,3 +14,80 @@ import * as zod from "zod";
 export const HealthCheckResponse = zod.object({
   status: zod.string(),
 });
+
+/**
+ * @summary Get personal brand homepage content
+ */
+export const GetBrandHomeResponse = zod.object({
+  profile: zod.object({
+    name: zod.string(),
+    domain: zod.string(),
+    headline: zod.string(),
+    bio: zod.string(),
+  }),
+  metrics: zod.array(
+    zod.object({
+      label: zod.string(),
+      value: zod.string(),
+      detail: zod.string(),
+    }),
+  ),
+  startups: zod.array(
+    zod.object({
+      name: zod.string(),
+      role: zod.string(),
+      period: zod.string(),
+      summary: zod.string(),
+      outcomes: zod.array(zod.string()),
+    }),
+  ),
+  projects: zod.array(
+    zod.object({
+      name: zod.string(),
+      category: zod.string(),
+      year: zod.string(),
+      description: zod.string(),
+      impact: zod.string(),
+    }),
+  ),
+  course: zod.object({
+    title: zod.string(),
+    subtitle: zod.string(),
+    description: zod.string(),
+    status: zod.string(),
+    modules: zod.array(zod.string()),
+  }),
+  blogPosts: zod.array(
+    zod.object({
+      slug: zod.string(),
+      title: zod.string(),
+      excerpt: zod.string(),
+      category: zod.string(),
+      publishedAt: zod.string(),
+      readTime: zod.string(),
+    }),
+  ),
+  socials: zod.array(
+    zod.object({
+      label: zod.string(),
+      url: zod.string(),
+    }),
+  ),
+});
+
+/**
+ * @summary Subscribe to newsletter
+ */
+export const SubscribeNewsletterBody = zod.object({
+  email: zod.string().email(),
+  name: zod.string().optional(),
+  source: zod.string().optional(),
+});
+
+export const SubscribeNewsletterResponse = zod.object({
+  id: zod.number(),
+  email: zod.string(),
+  name: zod.string().nullish(),
+  source: zod.string(),
+  createdAt: zod.string(),
+});

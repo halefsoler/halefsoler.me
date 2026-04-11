@@ -6,4 +6,15 @@
  * OpenAPI spec version: 0.1.0
  */
 
+export * from "./blogPost";
+export * from "./brandHome";
+export * from "./brandHomeProfile";
+export * from "./course";
+export * from "./errorResponse";
 export * from "./healthStatus";
+export * from "./metric";
+export * from "./newsletterSubscription";
+export * from "./newsletterSubscriptionInput";
+export * from "./project";
+export * from "./socialLink";
+export * from "./startup";
