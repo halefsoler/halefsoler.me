@@ -1,6 +1,6 @@
 import { Course } from "@workspace/api-client-react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface CourseSectionProps {
   course: Course;
@@ -8,52 +8,53 @@ interface CourseSectionProps {
 
 export default function CourseSection({ course }: CourseSectionProps) {
   return (
-    <section id="course" className="py-32 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-3xl max-h-3xl bg-[#7C3AED]/8 rounded-full blur-[120px] pointer-events-none" />
-      
-      <div className="container relative z-10 mx-auto px-6">
-        <div className="bg-gradient-to-br from-primary/5 via-accent/5 to-transparent border border-border/50 rounded-[2rem] p-8 md:p-16 lg:p-24 flex flex-col lg:flex-row gap-16 items-center">
-          
-          <div className="lg:w-1/2 flex flex-col items-start text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary mb-8">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              {course.status}
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-[-0.03em] mb-6">
-              {course.title}
-            </h2>
-            
-            <p className="text-xl md:text-2xl text-foreground font-medium mb-6 tracking-[-0.02em]">
-              {course.subtitle}
-            </p>
-            
-            <p className="text-lg text-muted-foreground leading-[1.7] mb-10">
-              {course.description}
-            </p>
-            
-            <Button size="lg" className="rounded-full px-8 text-base h-14 w-full sm:w-auto group bg-primary text-primary-foreground hover:bg-primary/90">
-              Entrar na lista de espera
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
+    <section id="course" className="py-28 border-t border-border/30">
+      <div className="mx-auto max-w-[1200px] px-6">
+        <div className="relative rounded-3xl border border-border/40 bg-gradient-to-br from-card/80 via-card/40 to-transparent overflow-hidden">
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/[0.04] rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-accent/[0.03] rounded-full blur-[80px] pointer-events-none" />
 
-          <div className="lg:w-1/2 w-full">
-            <div className="bg-card/60 border border-border/50 rounded-2xl p-8 backdrop-blur-sm">
-              <h3 className="text-xl font-semibold mb-8 tracking-[-0.02em]">Currículo do curso</h3>
-              <ul className="space-y-6">
-                {course.modules.map((module, index) => (
-                  <li key={index} className="flex items-start gap-4">
-                    <div className="shrink-0 mt-0.5 text-primary">
-                      <CheckCircle2 className="w-6 h-6" />
-                    </div>
-                    <span className="text-lg text-foreground/90">{module}</span>
-                  </li>
-                ))}
-              </ul>
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 md:p-14 lg:p-16">
+            <div className="flex flex-col justify-center">
+              <div className="inline-flex items-center self-start gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-xs font-medium text-primary mb-8">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                {course.status}
+              </div>
+
+              <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-semibold tracking-[-0.03em] leading-[1.1] mb-5">
+                {course.title}
+              </h2>
+
+              <p className="text-lg text-foreground/80 font-medium mb-4 tracking-[-0.01em]">
+                {course.subtitle}
+              </p>
+
+              <p className="text-sm text-muted-foreground leading-[1.7] mb-10">
+                {course.description}
+              </p>
+
+              <Button size="lg" className="rounded-full px-8 h-12 text-sm w-full sm:w-auto group self-start bg-foreground text-background hover:bg-foreground/90">
+                Entrar na lista de espera
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" />
+              </Button>
+            </div>
+
+            <div className="flex items-center">
+              <div className="w-full bg-background/60 border border-border/40 rounded-2xl p-8 backdrop-blur-sm">
+                <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-8">Currículo</h3>
+                <ul className="space-y-5">
+                  {course.modules.map((module, index) => (
+                    <li key={index} className="flex items-start gap-4">
+                      <span className="shrink-0 w-7 h-7 rounded-lg bg-primary/10 text-primary text-xs font-semibold flex items-center justify-center mt-0.5">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-sm text-foreground/90 leading-relaxed pt-1">{module}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-          
         </div>
       </div>
     </section>
