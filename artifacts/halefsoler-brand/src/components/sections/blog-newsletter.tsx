@@ -40,13 +40,13 @@ export default function BlogNewsletterSection({ posts }: BlogNewsletterSectionPr
   };
 
   return (
-    <section id="writing" className="py-28 border-t border-border/50">
+    <section id="writing" className="py-28 border-t border-white/[0.06]">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-7">
             <div className="mb-12">
               <p className="text-sm font-medium text-primary tracking-wide uppercase mb-4">Blog</p>
-              <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.03em]">Textos recentes</h2>
+              <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.03em] text-white">Textos recentes</h2>
             </div>
 
             <div className="flex flex-col">
@@ -54,20 +54,20 @@ export default function BlogNewsletterSection({ posts }: BlogNewsletterSectionPr
                 <article
                   key={post.slug}
                   className={`group py-8 ${
-                    index < posts.length - 1 ? "border-b border-border/50" : ""
+                    index < posts.length - 1 ? "border-b border-white/[0.06]" : ""
                   }`}
                 >
-                  <div className="flex items-center gap-3 text-xs text-muted-foreground mb-4">
+                  <div className="flex items-center gap-3 text-xs text-white/40 mb-4">
                     <span className="font-medium text-primary/80 uppercase tracking-wider">{post.category}</span>
-                    <span className="w-0.5 h-0.5 rounded-full bg-muted-foreground/40" />
+                    <span className="w-0.5 h-0.5 rounded-full bg-white/20" />
                     <span>{post.publishedAt}</span>
-                    <span className="w-0.5 h-0.5 rounded-full bg-muted-foreground/40" />
+                    <span className="w-0.5 h-0.5 rounded-full bg-white/20" />
                     <span>{post.readTime} de leitura</span>
                   </div>
-                  <h3 className="text-xl font-semibold tracking-[-0.02em] mb-3 group-hover:text-primary transition-colors cursor-default">
+                  <h3 className="text-xl font-semibold tracking-[-0.02em] mb-3 text-white group-hover:text-primary transition-colors cursor-default">
                     {post.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-[1.7]">
+                  <p className="text-sm text-white/50 leading-[1.7]">
                     {post.excerpt}
                   </p>
                 </article>
@@ -77,10 +77,10 @@ export default function BlogNewsletterSection({ posts }: BlogNewsletterSectionPr
 
           <div className="lg:col-span-5">
             <div className="sticky top-28">
-              <div className="rounded-3xl border border-border bg-muted/30 p-8 md:p-10" id="newsletter">
+              <div className="rounded-3xl border border-white/[0.06] bg-white/[0.02] p-8 md:p-10" id="newsletter">
                 <p className="text-sm font-medium text-primary tracking-wide uppercase mb-6">Newsletter</p>
-                <h3 className="text-2xl font-semibold tracking-[-0.02em] mb-4">Entre na newsletter</h3>
-                <p className="text-sm text-muted-foreground leading-[1.7] mb-8">
+                <h3 className="text-2xl font-semibold tracking-[-0.02em] mb-4 text-white">Entre na newsletter</h3>
+                <p className="text-sm text-white/50 leading-[1.7] mb-8">
                   Receba ensaios sobre construção de produtos, marca pessoal, growth e bastidores de operação direto no seu inbox.
                 </p>
 
@@ -91,11 +91,11 @@ export default function BlogNewsletterSection({ posts }: BlogNewsletterSectionPr
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="h-12 rounded-xl bg-background border-border text-sm placeholder:text-muted-foreground/50 focus-visible:ring-primary/20"
+                    className="h-12 rounded-xl bg-white/[0.04] border-white/[0.08] text-sm text-white placeholder:text-white/30 focus-visible:ring-primary/30"
                   />
                   <Button
                     type="submit"
-                    className="h-12 rounded-xl text-sm w-full group bg-foreground text-background hover:bg-foreground/90"
+                    className="h-12 rounded-xl text-sm w-full group bg-primary text-primary-foreground hover:bg-primary/90"
                     disabled={subscribe.isPending}
                   >
                     {subscribe.isPending ? (
@@ -107,7 +107,7 @@ export default function BlogNewsletterSection({ posts }: BlogNewsletterSectionPr
                       </>
                     )}
                   </Button>
-                  <p className="text-xs text-muted-foreground/60 text-center mt-1">Sem spam. Saia quando quiser.</p>
+                  <p className="text-xs text-white/30 text-center mt-1">Sem spam. Saia quando quiser.</p>
                 </form>
               </div>
             </div>

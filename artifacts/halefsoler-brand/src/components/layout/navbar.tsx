@@ -30,7 +30,7 @@ export default function Navbar({ profile, socials }: NavbarProps) {
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "bg-background/90 backdrop-blur-xl border-b border-border"
+          ? "bg-background/80 backdrop-blur-xl border-b border-white/[0.06]"
           : "bg-transparent"
       }`}
     >
@@ -45,7 +45,7 @@ export default function Navbar({ profile, socials }: NavbarProps) {
             <a
               key={link.label}
               href={link.href}
-              className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg"
+              className="px-4 py-2 text-sm text-white/50 hover:text-white transition-colors rounded-lg"
             >
               {link.label}
             </a>
@@ -55,11 +55,11 @@ export default function Navbar({ profile, socials }: NavbarProps) {
         <div className="hidden md:flex items-center gap-3">
           <a
             href="#newsletter"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors px-3 py-2"
+            className="text-sm text-white/50 hover:text-white transition-colors px-3 py-2"
           >
             Newsletter
           </a>
-          <Button size="sm" className="rounded-full px-5 h-9 text-sm font-medium bg-foreground text-background hover:bg-foreground/90" asChild>
+          <Button size="sm" className="rounded-full px-5 h-9 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90" asChild>
             <a href="#newsletter">Inscrever-se</a>
           </Button>
         </div>
@@ -73,18 +73,18 @@ export default function Navbar({ profile, socials }: NavbarProps) {
       </div>
 
       {isOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-background/95 backdrop-blur-xl border-b border-border p-6 flex flex-col gap-4">
+        <div className="md:hidden absolute top-16 left-0 w-full bg-background/95 backdrop-blur-xl border-b border-white/[0.06] p-6 flex flex-col gap-4">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-lg text-muted-foreground hover:text-foreground transition-colors py-1"
+              className="text-lg text-white/60 hover:text-white transition-colors py-1"
             >
               {link.label}
             </a>
           ))}
-          <Button className="w-full rounded-full mt-2 bg-foreground text-background hover:bg-foreground/90" asChild>
+          <Button className="w-full rounded-full mt-2 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
             <a href="#newsletter" onClick={() => setIsOpen(false)}>Inscrever-se</a>
           </Button>
         </div>
