@@ -30,7 +30,7 @@ export default function Navbar({ profile, socials }: NavbarProps) {
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "bg-background/90 backdrop-blur-xl border-b border-border/40"
+          ? "bg-background/90 backdrop-blur-xl border-b border-border"
           : "bg-transparent"
       }`}
     >
@@ -73,7 +73,7 @@ export default function Navbar({ profile, socials }: NavbarProps) {
       </div>
 
       {isOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-background/95 backdrop-blur-xl border-b border-border/40 p-6 flex flex-col gap-4">
+        <div className="md:hidden absolute top-16 left-0 w-full bg-background/95 backdrop-blur-xl border-b border-border p-6 flex flex-col gap-4">
           {navLinks.map((link) => (
             <a
               key={link.label}

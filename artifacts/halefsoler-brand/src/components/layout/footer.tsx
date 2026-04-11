@@ -8,7 +8,7 @@ interface FooterProps {
 
 export default function Footer({ profile, socials }: FooterProps) {
   return (
-    <footer className="border-t border-border/30 py-16">
+    <footer className="border-t border-border/50 py-16">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-12">
           <div className="flex flex-col gap-4">
@@ -60,11 +60,11 @@ export default function Footer({ profile, socials }: FooterProps) {
           </div>
         </div>
 
-        <div className="mt-16 pt-6 border-t border-border/20 flex items-center justify-between">
-          <p className="text-xs text-muted-foreground/50">
+        <div className="mt-16 pt-6 border-t border-border/30 flex items-center justify-between">
+          <p className="text-xs text-muted-foreground/60">
             &copy; {new Date().getFullYear()} {profile.name}
           </p>
-          <p className="text-xs text-muted-foreground/50">{profile.domain}</p>
+          <p className="text-xs text-muted-foreground/60">{profile.domain}</p>
         </div>
       </div>
     </footer>

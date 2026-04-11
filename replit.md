@@ -15,7 +15,7 @@ Current primary web artifact is `artifacts/halefsoler-brand`, a React/Vite perso
 - **Soft Gray**: `#94A3B8` — body text, supporting elements
 - **Fonts**: Inter (sans), Instrument Serif (display/headings), JetBrains Mono (mono/logo)
 - **Style**: Glassmorphism cards, gradient orbs (green/purple), Lucide icons at 1.5px stroke
-- **Always dark mode** (`defaultTheme="dark"` in ThemeProvider)
+- **Light mode** (`defaultTheme="light"` in ThemeProvider) — white background with navy text
 - **Language**: Portuguese (pt-BR)
 
 ## Stack

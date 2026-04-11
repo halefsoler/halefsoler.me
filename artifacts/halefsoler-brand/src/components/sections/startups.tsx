@@ -19,7 +19,7 @@ export default function StartupsSection({ startups }: StartupsSectionProps) {
           {startups.map((startup, index) => (
             <div
               key={index}
-              className="group relative rounded-2xl border border-border/40 bg-card/40 p-8 flex flex-col hover:border-border/80 hover:bg-card/60 transition-all duration-300"
+              className="group relative rounded-2xl border border-border bg-card p-8 flex flex-col hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
             >
               <div className="flex items-center gap-2 mb-6">
                 <span className="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-full">
@@ -36,8 +36,8 @@ export default function StartupsSection({ startups }: StartupsSectionProps) {
                 {startup.summary}
               </p>
 
-              <ul className="space-y-2.5 border-t border-border/30 pt-6">
-                {startup.outcomes.map((outcome, i) => (
+              <ul className="space-y-2.5 border-t border-border/60 pt-6">
+                {startup.outcomes.map((outcome: string, i: number) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm text-foreground/80">
                     <span className="shrink-0 mt-1.5 w-1 h-1 rounded-full bg-primary" />
                     {outcome}

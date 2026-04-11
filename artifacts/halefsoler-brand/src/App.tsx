@@ -20,7 +20,7 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="dark" storageKey="halefsoler-theme">
+      <ThemeProvider defaultTheme="light" storageKey="halefsoler-theme">
         <TooltipProvider>
           <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
             <Router />

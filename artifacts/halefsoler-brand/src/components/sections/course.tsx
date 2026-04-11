@@ -8,9 +8,9 @@ interface CourseSectionProps {
 
 export default function CourseSection({ course }: CourseSectionProps) {
   return (
-    <section id="course" className="py-28 border-t border-border/30">
+    <section id="course" className="py-28 border-t border-border/50">
       <div className="mx-auto max-w-[1200px] px-6">
-        <div className="relative rounded-3xl border border-border/40 bg-gradient-to-br from-card/80 via-card/40 to-transparent overflow-hidden">
+        <div className="relative rounded-3xl border border-border bg-muted/30 overflow-hidden">
           <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/[0.04] rounded-full blur-[100px] pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-accent/[0.03] rounded-full blur-[80px] pointer-events-none" />
 
@@ -40,10 +40,10 @@ export default function CourseSection({ course }: CourseSectionProps) {
             </div>
 
             <div className="flex items-center">
-              <div className="w-full bg-background/60 border border-border/40 rounded-2xl p-8 backdrop-blur-sm">
+              <div className="w-full bg-background border border-border rounded-2xl p-8">
                 <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-8">Currículo</h3>
                 <ul className="space-y-5">
-                  {course.modules.map((module, index) => (
+                  {course.modules.map((module: string, index: number) => (
                     <li key={index} className="flex items-start gap-4">
                       <span className="shrink-0 w-7 h-7 rounded-lg bg-primary/10 text-primary text-xs font-semibold flex items-center justify-center mt-0.5">
                         {String(index + 1).padStart(2, "0")}

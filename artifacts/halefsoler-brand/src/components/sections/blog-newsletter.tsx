@@ -40,7 +40,7 @@ export default function BlogNewsletterSection({ posts }: BlogNewsletterSectionPr
   };
 
   return (
-    <section id="writing" className="py-28 border-t border-border/30">
+    <section id="writing" className="py-28 border-t border-border/50">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-7">
@@ -54,11 +54,11 @@ export default function BlogNewsletterSection({ posts }: BlogNewsletterSectionPr
                 <article
                   key={post.slug}
                   className={`group py-8 ${
-                    index < posts.length - 1 ? "border-b border-border/30" : ""
+                    index < posts.length - 1 ? "border-b border-border/50" : ""
                   }`}
                 >
                   <div className="flex items-center gap-3 text-xs text-muted-foreground mb-4">
-                    <span className="font-medium text-primary/70 uppercase tracking-wider">{post.category}</span>
+                    <span className="font-medium text-primary/80 uppercase tracking-wider">{post.category}</span>
                     <span className="w-0.5 h-0.5 rounded-full bg-muted-foreground/40" />
                     <span>{post.publishedAt}</span>
                     <span className="w-0.5 h-0.5 rounded-full bg-muted-foreground/40" />
@@ -77,7 +77,7 @@ export default function BlogNewsletterSection({ posts }: BlogNewsletterSectionPr
 
           <div className="lg:col-span-5">
             <div className="sticky top-28">
-              <div className="rounded-3xl border border-border/40 bg-card/40 p-8 md:p-10" id="newsletter">
+              <div className="rounded-3xl border border-border bg-muted/30 p-8 md:p-10" id="newsletter">
                 <p className="text-sm font-medium text-primary tracking-wide uppercase mb-6">Newsletter</p>
                 <h3 className="text-2xl font-semibold tracking-[-0.02em] mb-4">Entre na newsletter</h3>
                 <p className="text-sm text-muted-foreground leading-[1.7] mb-8">
@@ -91,7 +91,7 @@ export default function BlogNewsletterSection({ posts }: BlogNewsletterSectionPr
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="h-12 rounded-xl bg-background/60 border-border/60 text-sm placeholder:text-muted-foreground/50 focus-visible:ring-primary/20"
+                    className="h-12 rounded-xl bg-background border-border text-sm placeholder:text-muted-foreground/50 focus-visible:ring-primary/20"
                   />
                   <Button
                     type="submit"
