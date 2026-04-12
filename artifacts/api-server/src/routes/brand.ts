@@ -60,8 +60,8 @@ const brandHome = {
     },
     {
       name: "Mini",
-      role: "Creator",
-      period: "Em expansão",
+      role: "Founder",
+      period: "2021 - 2024",
       summary:
         "Produtos de conhecimento para transformar experiência prática em método aplicável.",
       outcomes: [
