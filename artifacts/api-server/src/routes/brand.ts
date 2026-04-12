@@ -47,7 +47,7 @@ const brandHome = {
       ],
     },
     {
-      name: "Growth & Product Company",
+      name: "StartStop.ai",
       role: "Co-founder",
       period: "2021 — 2024",
       summary:
