@@ -30,7 +30,7 @@ const brandHome = {
       detail: "Impacto gerado em receita, eficiência comercial e posicionamento digital.",
     },
     {
-      label: "Projetos",
+      label: "MVPs",
       value: "40+",
       detail: "Participações entre produto, aquisição, conteúdo, tecnologia e educação.",
     },
