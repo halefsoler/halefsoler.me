@@ -74,7 +74,7 @@ const brandHome = {
   projects: [
     {
       name: "Award | Rede Líderes",
-      category: "Award Rede Lideres",
+      category: "AWARD",
       year: "2026",
       description:
         "Sistema editorial, posicionamento e canais para transformar autoridade em audiência e receita.",
