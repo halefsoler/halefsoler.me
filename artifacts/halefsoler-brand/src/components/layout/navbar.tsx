@@ -17,7 +17,7 @@ export default function Navbar({ profile, socials }: NavbarProps) {
     { label: "Startups", href: "#startups" },
     { label: "Projetos", href: "#projects" },
     { label: "Curso", href: "#course" },
-    { label: "Textos", href: "#writing" },
+    { label: "Newsletter", href: "#writing" },
   ];
 
   return (
