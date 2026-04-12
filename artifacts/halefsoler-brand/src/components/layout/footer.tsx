@@ -12,7 +12,7 @@ export default function Footer({ profile, socials }: FooterProps) {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8">
           <div className="flex flex-col gap-6">
-            <h3 className="font-serif text-3xl md:text-4xl">{profile.name}</h3>
+            <h3 className="font-serif text-3xl md:text-4xl">/HS</h3>
             <p className="text-muted-foreground max-w-sm text-lg leading-relaxed">
               {profile.headline}
             </p>
