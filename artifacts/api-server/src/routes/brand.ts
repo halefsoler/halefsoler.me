@@ -67,7 +67,7 @@ const brandHome = {
       outcomes: [
         "E-commerce automatizado com last-mile delivery companies (3rd parties)",
         "B2B2C: parceiro dos maiores players de Hotelaria e Locação de carros do Brasil",
-        "Comunidade em torno de execução e clareza estratégica",
+        "Especializados em Higienização & Warehouse",
       ],
     },
   ],
