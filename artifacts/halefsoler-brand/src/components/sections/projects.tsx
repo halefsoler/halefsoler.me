@@ -9,7 +9,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
     <section id="projects" className="py-32 bg-black/40 border-y border-white/5">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mb-16 md:mb-24">
-          <h2 className="text-4xl md:text-5xl font-serif tracking-tight mb-6">Projetos selecionados</h2>
+          <h2 className="text-4xl md:text-5xl font-serif tracking-tight mb-6">Últimos Projetos</h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Uma curadoria de iniciativas, consultorias, produtos e papéis operacionais com impacto em diferentes mercados.
           </p>

@@ -93,22 +93,22 @@ const brandHome = {
         "Esse é o quarto Oracle Innovation Center da Oracle no Mundo, mas único em uma subsidiária de Vendas",
     },
     {
-      name: "Produtos educacionais premium",
-      category: "Education",
-      year: "2025",
+      name: "Loja Conceito Oracle",
+      category: "RETAIL",
+      year: "2022",
       description:
-        "Estruturação de currículo, oferta, narrativa e experiência de aprendizagem.",
+        "A primeira Loja Conceito da Oracle no Mundo, criada dentro da Casa Oracle",
       impact:
-        "Transformação de conhecimento tácito em método vendável e escalável.",
+        "Gerado U$115M em 1 ano com conversion rate de 20% e mais de 12 startups envolvidas.",
     },
     {
-      name: "Automação e inteligência operacional",
-      category: "AI Systems",
-      year: "2024",
+      name: "Casa Oracle",
+      category: "ECOSSISTEM",
+      year: "2019",
       description:
-        "Fluxos, agentes e integrações para reduzir trabalho manual e aumentar foco estratégico.",
+        "Hub Oracle de Startups, VCs, Encontros e Labs para Empresas.",
       impact:
-        "Mais consistência comercial, editorial e analítica para operações digitais.",
+        "Mais de 2k visitas em 3 anos e meio e mais de 60 projetos co-criados com time de Inovação.",
     },
   ],
   course: {
