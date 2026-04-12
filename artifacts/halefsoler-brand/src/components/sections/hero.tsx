@@ -16,7 +16,7 @@ export default function HeroSection({ profile }: HeroSectionProps) {
       <div className="container relative z-10 mx-auto px-6 flex flex-col items-center text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-muted-foreground mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
           <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          Aberto a novas oportunidades
+          Preparado para novas oportunidades
         </div>
 
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight text-balance leading-[1.1] md:leading-[1.05] max-w-4xl mx-auto mb-8 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-150">
