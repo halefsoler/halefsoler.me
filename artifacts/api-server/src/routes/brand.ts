@@ -93,7 +93,7 @@ const brandHome = {
         "Esse é o quarto Oracle Innovation Center da Oracle no Mundo, mas único em uma subsidiária de Vendas",
     },
     {
-      name: "Loja Conceito Oracle",
+      name: "Loja Conceito",
       category: "RETAIL",
       year: "2022",
       description:
@@ -103,7 +103,7 @@ const brandHome = {
     },
     {
       name: "Casa Oracle",
-      category: "ECOSSISTEM",
+      category: "ECOSSYSTEM",
       year: "2019",
       description:
         "Hub Oracle de Startups, VCs, Encontros e Labs para Empresas.",
