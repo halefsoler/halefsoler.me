@@ -86,7 +86,7 @@ const brandHome = {
       category: "Expansion",
       year: "2025",
       description:
-        "Modelos de aquisição, ativação e retenção desenhados para times enxutos.",
+        "Pipeline de U$20B com receita de U$3B em um projeto investido de R$40M, 45 mantenedores, 9 meses (do MVP ao Go Live) e 61 squads.",
       impact:
         "Mais velocidade para testar hipóteses e reduzir desperdício em canais.",
     },
