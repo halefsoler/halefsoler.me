@@ -18,6 +18,8 @@ import type {
 
 import type {
   BrandHome,
+  CourseWaitlistEntry,
+  CourseWaitlistInput,
   ErrorResponse,
   HealthStatus,
   NewsletterSubscription,
@@ -269,4 +271,90 @@ export const useSubscribeNewsletter = <
   TContext
 > => {
   return useMutation(getSubscribeNewsletterMutationOptions(options));
+};
+
+/**
+ * @summary Join course waiting list
+ */
+export const getJoinCourseWaitlistUrl = () => {
+  return `/api/course-waitlist`;
+};
+
+export const joinCourseWaitlist = async (
+  courseWaitlistInput: CourseWaitlistInput,
+  options?: RequestInit,
+): Promise<CourseWaitlistEntry> => {
+  return customFetch<CourseWaitlistEntry>(getJoinCourseWaitlistUrl(), {
+    ...options,
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...options?.headers },
+    body: JSON.stringify(courseWaitlistInput),
+  });
+};
+
+export const getJoinCourseWaitlistMutationOptions = <
+  TError = ErrorType<ErrorResponse>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof joinCourseWaitlist>>,
+    TError,
+    { data: BodyType<CourseWaitlistInput> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof joinCourseWaitlist>>,
+  TError,
+  { data: BodyType<CourseWaitlistInput> },
+  TContext
+> => {
+  const mutationKey = ["joinCourseWaitlist"];
+  const { mutation: mutationOptions, request: requestOptions } = options
+    ? options.mutation &&
+      "mutationKey" in options.mutation &&
+      options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey }, request: undefined };
+
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof joinCourseWaitlist>>,
+    { data: BodyType<CourseWaitlistInput> }
+  > = (props) => {
+    const { data } = props ?? {};
+
+    return joinCourseWaitlist(data, requestOptions);
+  };
+
+  return { mutationFn, ...mutationOptions };
+};
+
+export type JoinCourseWaitlistMutationResult = NonNullable<
+  Awaited<ReturnType<typeof joinCourseWaitlist>>
+>;
+export type JoinCourseWaitlistMutationBody = BodyType<CourseWaitlistInput>;
+export type JoinCourseWaitlistMutationError = ErrorType<ErrorResponse>;
+
+/**
+ * @summary Join course waiting list
+ */
+export const useJoinCourseWaitlist = <
+  TError = ErrorType<ErrorResponse>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof joinCourseWaitlist>>,
+    TError,
+    { data: BodyType<CourseWaitlistInput> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationResult<
+  Awaited<ReturnType<typeof joinCourseWaitlist>>,
+  TError,
+  { data: BodyType<CourseWaitlistInput> },
+  TContext
+> => {
+  return useMutation(getJoinCourseWaitlistMutationOptions(options));
 };

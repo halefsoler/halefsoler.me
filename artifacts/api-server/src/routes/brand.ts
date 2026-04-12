@@ -1,9 +1,11 @@
 import { Router, type IRouter } from "express";
-import { db, newsletterSubscribersTable } from "@workspace/db";
+import { db, newsletterSubscribersTable, courseWaitinglistTable } from "@workspace/db";
 import {
   GetBrandHomeResponse,
   SubscribeNewsletterBody,
   SubscribeNewsletterResponse,
+  JoinCourseWaitlistBody,
+  JoinCourseWaitlistResponse,
 } from "@workspace/api-zod";
 
 const router: IRouter = Router();
@@ -196,6 +198,43 @@ router.post("/newsletter", async (req, res): Promise<void> => {
       name: subscriber.name,
       source: subscriber.source,
       createdAt: subscriber.createdAt.toISOString(),
+    }),
+  );
+});
+
+router.post("/course-waitlist", async (req, res): Promise<void> => {
+  const parsed = JoinCourseWaitlistBody.safeParse(req.body);
+
+  if (!parsed.success) {
+    req.log.warn({ errors: parsed.error.message }, "Invalid course waitlist input");
+    res.status(400).json({ error: parsed.error.message });
+    return;
+  }
+
+  const email = parsed.data.email.trim().toLowerCase();
+  const [entry] = await db
+    .insert(courseWaitinglistTable)
+    .values({
+      email,
+      name: parsed.data.name?.trim() || null,
+      source: parsed.data.source?.trim() || "course_page",
+    })
+    .onConflictDoUpdate({
+      target: courseWaitinglistTable.email,
+      set: {
+        name: parsed.data.name?.trim() || null,
+        source: parsed.data.source?.trim() || "course_page",
+      },
+    })
+    .returning();
+
+  res.json(
+    JoinCourseWaitlistResponse.parse({
+      id: entry.id,
+      email: entry.email,
+      name: entry.name,
+      source: entry.source,
+      createdAt: entry.createdAt.toISOString(),
     }),
   );
 });

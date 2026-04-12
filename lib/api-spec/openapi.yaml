@@ -61,6 +61,30 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ErrorResponse"
+  /course-waitlist:
+    post:
+      operationId: joinCourseWaitlist
+      tags: [brand]
+      summary: Join course waiting list
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CourseWaitlistInput"
+      responses:
+        "200":
+          description: Successfully joined waiting list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CourseWaitlistEntry"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
 components:
   schemas:
     HealthStatus:
@@ -238,6 +262,37 @@ components:
       required:
         - email
     NewsletterSubscription:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+        name:
+          type: string
+          nullable: true
+        source:
+          type: string
+        createdAt:
+          type: string
+      required:
+        - id
+        - email
+        - source
+        - createdAt
+    CourseWaitlistInput:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+        source:
+          type: string
+      required:
+        - email
+    CourseWaitlistEntry:
       type: object
       properties:
         id:

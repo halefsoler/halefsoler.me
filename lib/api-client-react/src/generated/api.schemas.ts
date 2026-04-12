@@ -84,6 +84,20 @@ export interface NewsletterSubscription {
   createdAt: string;
 }
 
+export interface CourseWaitlistInput {
+  email: string;
+  name?: string;
+  source?: string;
+}
+
+export interface CourseWaitlistEntry {
+  id: number;
+  email: string;
+  name?: string | null;
+  source: string;
+  createdAt: string;
+}
+
 export interface ErrorResponse {
   error: string;
 }

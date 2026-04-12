@@ -10,6 +10,8 @@ export * from "./blogPost";
 export * from "./brandHome";
 export * from "./brandHomeProfile";
 export * from "./course";
+export * from "./courseWaitlistEntry";
+export * from "./courseWaitlistInput";
 export * from "./errorResponse";
 export * from "./healthStatus";
 export * from "./metric";

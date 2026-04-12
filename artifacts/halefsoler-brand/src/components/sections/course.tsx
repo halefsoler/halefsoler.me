@@ -1,12 +1,46 @@
-import { Course } from "@workspace/api-client-react";
+import { Course, useJoinCourseWaitlist } from "@workspace/api-client-react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
+import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 
 interface CourseSectionProps {
   course: Course;
 }
 
 export default function CourseSection({ course }: CourseSectionProps) {
+  const [showForm, setShowForm] = useState(false);
+  const [email, setEmail] = useState("");
+  const { toast } = useToast();
+  const joinWaitlist = useJoinCourseWaitlist();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    joinWaitlist.mutate(
+      { data: { email, source: "course_section" } },
+      {
+        onSuccess: () => {
+          toast({
+            title: "Inscrição confirmada",
+            description: "Você entrou na lista de espera do curso. Avisaremos quando estiver disponível.",
+          });
+          setEmail("");
+          setShowForm(false);
+        },
+        onError: (error: any) => {
+          toast({
+            title: "Não foi possível inscrever",
+            description: error?.error?.error || "Algo deu errado. Tente novamente.",
+            variant: "destructive",
+          });
+        },
+      }
+    );
+  };
+
   return (
     <section id="course" className="py-32 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-3xl max-h-3xl bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
@@ -32,10 +66,43 @@ export default function CourseSection({ course }: CourseSectionProps) {
               {course.description}
             </p>
             
-            <Button size="lg" className="rounded-full px-8 text-base h-14 w-full sm:w-auto group">
-              Entrar na lista de espera
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            {!showForm ? (
+              <Button 
+                size="lg" 
+                className="rounded-full px-8 text-base h-14 w-full sm:w-auto group"
+                onClick={() => setShowForm(true)}
+              >
+                Entrar na lista de espera
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                <Input
+                  type="email"
+                  placeholder="Seu melhor e-mail"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="h-14 bg-white/5 border-white/10 text-foreground placeholder:text-muted-foreground rounded-full px-6 min-w-[280px]"
+                  autoFocus
+                />
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="rounded-full px-8 text-base h-14 group"
+                  disabled={joinWaitlist.isPending}
+                >
+                  {joinWaitlist.isPending ? (
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                  ) : (
+                    <>
+                      Confirmar
+                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
+                </Button>
+              </form>
+            )}
           </div>
 
           <div className="lg:w-1/2 w-full">

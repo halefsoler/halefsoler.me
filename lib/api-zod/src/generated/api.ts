@@ -91,3 +91,20 @@ export const SubscribeNewsletterResponse = zod.object({
   source: zod.string(),
   createdAt: zod.string(),
 });
+
+/**
+ * @summary Join course waiting list
+ */
+export const JoinCourseWaitlistBody = zod.object({
+  email: zod.string().email(),
+  name: zod.string().optional(),
+  source: zod.string().optional(),
+});
+
+export const JoinCourseWaitlistResponse = zod.object({
+  id: zod.number(),
+  email: zod.string(),
+  name: zod.string().nullish(),
+  source: zod.string(),
+  createdAt: zod.string(),
+});
