@@ -79,7 +79,7 @@ const brandHome = {
       description:
         "Somos um ecossistema de líderes e empresas que revoluciona a geração de negócios, oportunidades e relacionamentos",
       impact:
-        "Base para newsletter, curso, social distribution e oportunidades de negócio.",
+        "Abril de 2026 foi quando fui reconhecido dentro do Universo de 900 conselheiros para o ano de 2025.",
     },
     {
       name: "Playbooks de growth para startups",
