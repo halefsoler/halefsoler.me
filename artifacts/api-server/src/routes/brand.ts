@@ -119,7 +119,7 @@ const brandHome = {
       "Posicionamento e tese pessoal",
       "Arquitetura de conteúdo e escolhas",
       "Storytelling, Decisão, Execução",
-      "Sistema semanal de criação e conversão",
+      "Sistemas e empresas em estado crítico",
     ],
   },
   blogPosts: [
