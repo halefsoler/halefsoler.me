@@ -82,7 +82,7 @@ const brandHome = {
         "Abril de 2026 foi quando fui reconhecido dentro do Universo de 900 conselheiros para o ano de 2025.",
     },
     {
-      name: "Playbooks de growth para startups",
+      name: "Oracle Innovation Center #BR",
       category: "Expansion",
       year: "2025",
       description:
