@@ -88,7 +88,7 @@ const brandHome = {
       description:
         "Pipeline de U$20B com receita de U$3B em um projeto investido de R$40M, 45 mantenedores, 9 meses (do MVP ao Go Live) e 61 squads.",
       impact:
-        "Mais velocidade para testar hipóteses e reduzir desperdício em canais.",
+        "Esse é o quarto Oracle Innovation Center da Oracle no Mundo, mas único em uma subsidiária de Vendas",
     },
     {
       name: "Produtos educacionais premium",
