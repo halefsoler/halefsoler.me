@@ -63,7 +63,7 @@ const brandHome = {
       role: "Founder",
       period: "2021 - 2024",
       summary:
-        "Log-tech focada em Delivery de mobílias pet & babies em parceria com Rede Hoteleira, Airbnb e Locadoras de veículo",
+        "Log-tech focada em Delivery de mobílias pet & baby em parceria com Rede Hoteleira, Airbnb e Locadoras de veículo",
       outcomes: [
         "Conteúdos e aulas sobre produto, marca pessoal e negócios digitais",
         "Frameworks para founders, creators e especialistas",
