@@ -24,7 +24,7 @@ const brandHome = {
     },
     {
       label: "Resultados",
-      value: "R$ milhões",
+      value: "U$3 bilhões",
       detail: "Impacto gerado em receita, eficiência comercial e posicionamento digital.",
     },
     {
