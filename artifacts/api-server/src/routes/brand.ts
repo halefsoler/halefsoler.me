@@ -59,7 +59,7 @@ const brandHome = {
       ],
     },
     {
-      name: "Educação Empreendedora",
+      name: "Mini",
       role: "Creator",
       period: "Em expansão",
       summary:
