@@ -65,7 +65,7 @@ const brandHome = {
       summary:
         "Log-tech focada em Delivery de mobílias pet & baby em parceria com Rede Hoteleira, Airbnb e Locadoras de veículo",
       outcomes: [
-        "Conteúdos e aulas sobre produto, marca pessoal e negócios digitais",
+        "E-commerce automatizado com last-mile delivery companies (3rd parties)",
         "Frameworks para founders, creators e especialistas",
         "Comunidade em torno de execução e clareza estratégica",
       ],
