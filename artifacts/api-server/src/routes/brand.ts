@@ -83,7 +83,7 @@ const brandHome = {
     },
     {
       name: "Playbooks de growth para startups",
-      category: "Growth",
+      category: "Expansion",
       year: "2025",
       description:
         "Modelos de aquisição, ativação e retenção desenhados para times enxutos.",
