@@ -23,8 +23,8 @@ export default function Navbar({ profile, socials }: NavbarProps) {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-background/80 backdrop-blur-md transition-all">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="font-serif text-xl tracking-tight hover:opacity-80 transition-opacity">
-          {domain}
+        <Link href="/" className="hover:opacity-80 transition-opacity">
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt={domain} className="h-8" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
