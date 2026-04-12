@@ -117,7 +117,7 @@ const brandHome = {
     status: "Lista de espera aberta",
     modules: [
       "Posicionamento e tese pessoal",
-      "Arquitetura de conteúdo e newsletter",
+      "Arquitetura de conteúdo e escolhas",
       "Oferta, prova e distribuição",
       "Sistema semanal de criação e conversão",
     ],
