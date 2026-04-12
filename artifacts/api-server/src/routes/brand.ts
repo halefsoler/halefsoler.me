@@ -36,7 +36,7 @@ const brandHome = {
   startups: [
     {
       name: "hiGen",
-      role: "Founder",
+      role: "Founder & CEO",
       period: "Atual",
       summary:
         "Construção de novos produtos digitais com foco em validação rápida, aquisição e posicionamento.",
