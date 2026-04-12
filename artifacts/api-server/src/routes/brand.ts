@@ -68,7 +68,7 @@ const brandHome = {
         "Log-tech focada em Delivery de mobílias pet & baby em parceria com Rede Hoteleira, Airbnb e Locadoras de veículo",
       outcomes: [
         "E-commerce automatizado com last-mile delivery",
-        "B2B2C: parceiro dos maiores players de Hotelaria e Locação de carros do Brasil",
+        "Full integrado com players de Hotelaria e Locação de carros",
         "Especializados em Higienização & Warehouse",
       ],
     },
