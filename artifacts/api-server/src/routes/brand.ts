@@ -73,7 +73,7 @@ const brandHome = {
   ],
   projects: [
     {
-      name: "Arquitetura de marca pessoal",
+      name: "Award | Rede Líderes",
       category: "Award Rede Lideres",
       year: "2026",
       description:
