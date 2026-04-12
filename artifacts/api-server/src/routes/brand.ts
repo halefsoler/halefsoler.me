@@ -113,7 +113,7 @@ const brandHome = {
     title: "Strategist Toolkit: Ferramentas e processos que te abrirão os olhos para a Estratégia",
     subtitle: "Um curso para founders, especialistas e creators que querem construir autoridade composta.",
     description:
-      "Um método prático para transformar repertório, projetos e visão de mercado em uma presença digital clara, memorável e comercialmente útil.",
+      "50 frameworks modernos de estratégia organizados em 7 módulos — todos pensados para te ajudar a ganhar tempo construindo estratégia.",
     status: "Lista de espera aberta",
     modules: [
       "Posicionamento e tese pessoal",
