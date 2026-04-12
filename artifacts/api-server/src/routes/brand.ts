@@ -74,7 +74,7 @@ const brandHome = {
   projects: [
     {
       name: "Arquitetura de marca pessoal",
-      category: "Brand Strategy",
+      category: "Award Rede Lideres",
       year: "2026",
       description:
         "Sistema editorial, posicionamento e canais para transformar autoridade em audiência e receita.",
