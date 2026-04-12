@@ -51,7 +51,7 @@ const brandHome = {
       role: "Co-founder & Advisor",
       period: "Atual",
       summary:
-        "Operação orientada a geração de demanda, produto e automação para empresas em crescimento.",
+        "O primeiro video-cast 100% Autonomo no mundo nasceu e agora voce só precisa falar.",
       outcomes: [
         "Criação de playbooks de aquisição e conversão",
         "Projetos de posicionamento para marcas B2B e creator-led",
