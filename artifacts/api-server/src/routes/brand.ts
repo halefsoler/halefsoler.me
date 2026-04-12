@@ -77,7 +77,7 @@ const brandHome = {
       category: "AWARD",
       year: "2026",
       description:
-        "Sistema editorial, posicionamento e canais para transformar autoridade em audiência e receita.",
+        "Somos um ecossistema de líderes e empresas que revoluciona a geração de negócios, oportunidades e relacionamentos",
       impact:
         "Base para newsletter, curso, social distribution e oportunidades de negócio.",
     },
