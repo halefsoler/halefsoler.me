@@ -39,7 +39,7 @@ const brandHome = {
       role: "Founder & CEO",
       period: "Atual",
       summary:
-        "Construção de novos produtos digitais com foco em validação rápida, aquisição e posicionamento.",
+        "Ressignificamos a busca e aplicação de vagas para quem está nessa longa e dolorosa jornada.",
       outcomes: [
         "Da tese ao MVP com ciclos curtos de aprendizado",
         "Estruturação de narrativa comercial e canais de aquisição",
