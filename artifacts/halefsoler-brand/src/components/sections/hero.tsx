@@ -7,44 +7,42 @@ interface HeroSectionProps {
 
 export default function HeroSection({ profile }: HeroSectionProps) {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[15%] left-[5%] w-[500px] h-[500px] bg-primary/[0.08] rounded-full blur-[128px]" />
-        <div className="absolute bottom-[10%] right-[5%] w-[400px] h-[400px] bg-accent/[0.06] rounded-full blur-[128px]" />
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-24">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 -left-1/4 w-[50vw] h-[50vw] bg-white/5 rounded-full blur-[120px] mix-blend-screen" />
+        <div className="absolute bottom-0 right-0 w-[40vw] h-[40vw] bg-blue-500/5 rounded-full blur-[100px] mix-blend-screen" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1200px] px-6 flex flex-col items-center text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/[0.08] text-sm text-white/60 mb-10 animate-in fade-in slide-in-from-bottom-2 duration-500">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+      <div className="container relative z-10 mx-auto px-6 flex flex-col items-center text-center">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-muted-foreground mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
           Aberto a novas oportunidades
         </div>
 
-        <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-semibold tracking-[-0.04em] leading-[1.05] max-w-[900px] mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 text-balance text-white">
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight text-balance leading-[1.1] md:leading-[1.05] max-w-4xl mx-auto mb-8 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-150">
           {profile.headline}
         </h1>
-
-        <p className="text-lg md:text-xl text-white/50 max-w-[600px] leading-[1.7] mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
+        
+        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
           {profile.bio}
         </p>
 
-        <div className="flex items-center gap-3 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-          <a
-            href="#startups"
-            className="group inline-flex items-center gap-2 h-11 px-6 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+        <div className="flex flex-col sm:flex-row items-center gap-4 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-500">
+          <a 
+            href="#startups" 
+            className="group flex items-center justify-center gap-2 h-12 px-8 rounded-full bg-primary text-primary-foreground font-medium text-lg hover:bg-primary/90 transition-colors"
           >
             Ver meu trabalho
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
-          <a
-            href="#newsletter"
-            className="inline-flex items-center h-11 px-6 rounded-full border border-white/[0.1] text-sm font-medium text-white/80 hover:bg-white/[0.04] transition-colors"
+          <a 
+            href="#newsletter" 
+            className="flex items-center justify-center h-12 px-8 rounded-full border border-border bg-transparent hover:bg-white/5 text-foreground font-medium text-lg transition-colors"
           >
             Ler meus textos
           </a>
         </div>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
     </section>
   );
 }

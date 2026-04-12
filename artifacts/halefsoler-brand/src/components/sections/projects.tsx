@@ -6,36 +6,33 @@ interface ProjectsSectionProps {
 
 export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
-    <section id="projects" className="py-28 border-t border-white/[0.06]">
-      <div className="mx-auto max-w-[1200px] px-6">
-        <div className="mb-16">
-          <p className="text-sm font-medium text-primary tracking-wide uppercase mb-4">Projetos</p>
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.03em] max-w-xl text-white">
-            Projetos selecionados
-          </h2>
+    <section id="projects" className="py-32 bg-black/40 border-y border-white/5">
+      <div className="container mx-auto px-6">
+        <div className="max-w-3xl mb-16 md:mb-24">
+          <h2 className="text-4xl md:text-5xl font-serif tracking-tight mb-6">Projetos selecionados</h2>
+          <p className="text-xl text-muted-foreground leading-relaxed">
+            Uma curadoria de iniciativas, consultorias, produtos e papéis operacionais com impacto em diferentes mercados.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="flex flex-col">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 hover:border-primary/30 hover:bg-white/[0.04] transition-all duration-300"
+            <div 
+              key={index} 
+              className="group flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-8 border-b border-white/10 last:border-0 hover:bg-white/2 transition-colors px-4 -mx-4 rounded-xl"
             >
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-xs font-medium text-primary/80 tracking-wider uppercase">{project.category}</span>
-                <span className="text-xs text-white/40 font-mono">{project.year}</span>
+              <div className="md:w-1/4 shrink-0 pt-1">
+                <div className="text-sm font-medium text-muted-foreground mb-1">{project.year}</div>
+                <div className="text-xs uppercase tracking-wider text-white/40 font-semibold">{project.category}</div>
               </div>
-
-              <h3 className="text-xl font-semibold tracking-[-0.02em] mb-3 text-white group-hover:text-primary transition-colors">
-                {project.name}
-              </h3>
-
-              <p className="text-sm text-white/50 leading-[1.7] mb-6">
-                {project.description}
-              </p>
-
-              <div className="text-sm text-white/60 bg-white/[0.03] rounded-xl px-4 py-3 border border-white/[0.04]">
-                {project.impact}
+              <div className="md:w-3/4">
+                <h3 className="text-2xl font-serif tracking-tight mb-3 group-hover:text-primary transition-colors">{project.name}</h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  {project.description}
+                </p>
+                <div className="inline-flex items-center text-sm font-medium text-foreground bg-white/5 px-3 py-1.5 rounded-md border border-white/5">
+                  {project.impact}
+                </div>
               </div>
             </div>
           ))}

@@ -6,19 +6,16 @@ interface MetricsSectionProps {
 
 export default function MetricsSection({ metrics }: MetricsSectionProps) {
   return (
-    <section className="py-20 border-b border-white/[0.06]">
-      <div className="mx-auto max-w-[1200px] px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+    <section className="py-24 bg-white/2 border-y border-white/5">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-white/10">
           {metrics.map((metric, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center text-center px-4 py-6 rounded-2xl hover:bg-white/[0.02] transition-colors"
-            >
-              <span className="text-4xl md:text-5xl font-semibold tracking-[-0.04em] text-white mb-3">
+            <div key={index} className="flex flex-col items-center text-center pt-12 md:pt-0 first:pt-0 px-4">
+              <span className="text-5xl md:text-6xl font-serif font-light tracking-tight mb-4 text-foreground">
                 {metric.value}
               </span>
-              <span className="text-sm font-medium text-white/80 mb-1">{metric.label}</span>
-              <span className="text-xs text-white/40 leading-relaxed max-w-[180px]">{metric.detail}</span>
+              <h3 className="text-lg font-medium text-foreground mb-2">{metric.label}</h3>
+              <p className="text-sm text-muted-foreground max-w-[200px]">{metric.detail}</p>
             </div>
           ))}
         </div>
