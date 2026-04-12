@@ -49,7 +49,7 @@ const brandHome = {
     {
       name: "StartStop",
       role: "Co-founder & Advisor",
-      period: "2021 — 2024",
+      period: "Atual",
       summary:
         "Operação orientada a geração de demanda, produto e automação para empresas em crescimento.",
       outcomes: [
