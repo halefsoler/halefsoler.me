@@ -35,7 +35,7 @@ const brandHome = {
   ],
   startups: [
     {
-      name: "Venture Studio / Startup Lab",
+      name: "hiGen",
       role: "Founder",
       period: "Atual",
       summary:
