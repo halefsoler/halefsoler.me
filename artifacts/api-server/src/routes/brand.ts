@@ -118,7 +118,7 @@ const brandHome = {
     modules: [
       "Posicionamento e tese pessoal",
       "Arquitetura de conteúdo e escolhas",
-      "Oferta, prova e distribuição",
+      "Storytelling, Decisão, Execução",
       "Sistema semanal de criação e conversão",
     ],
   },
