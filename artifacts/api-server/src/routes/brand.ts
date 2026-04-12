@@ -110,7 +110,7 @@ const brandHome = {
     },
   ],
   course: {
-    title: "Marca Pessoal que Vende sem Parecer Conteúdo Genérico",
+    title: "Strategist Toolkit: Ferramentas e processos que te abrirão os olhos para a Estratégia",
     subtitle: "Um curso para founders, especialistas e creators que querem construir autoridade composta.",
     description:
       "Um método prático para transformar repertório, projetos e visão de mercado em uma presença digital clara, memorável e comercialmente útil.",
