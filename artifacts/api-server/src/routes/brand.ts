@@ -154,10 +154,8 @@ const brandHome = {
     },
   ],
   socials: [
-    { label: "LinkedIn", url: "https://linkedin.com/in/halefsoler" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/halefsoler/" },
     { label: "Instagram", url: "https://instagram.com/halefsoler" },
-    { label: "X", url: "https://x.com/halefsoler" },
-    { label: "YouTube", url: "https://youtube.com/@halefsoler" },
   ],
 };
 
