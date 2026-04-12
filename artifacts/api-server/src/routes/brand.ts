@@ -32,11 +32,6 @@ const brandHome = {
       value: "40+",
       detail: "Participações entre produto, aquisição, conteúdo, tecnologia e educação.",
     },
-    {
-      label: "Comunidade",
-      value: "Newsletter",
-      detail: "Estratégias, frameworks e bastidores para builders e founders.",
-    },
   ],
   startups: [
     {
