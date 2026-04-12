@@ -41,7 +41,7 @@ export default function Navbar({ profile, socials }: NavbarProps) {
           </div>
           <div className="flex items-center gap-4 border-l border-white/10 pl-6">
             <Button variant="default" size="sm" className="rounded-full px-6 font-medium" asChild>
-              <a href="#newsletter">Inscrever-se</a>
+              <a href="#newsletter">Entrar na lista de espera</a>
             </Button>
           </div>
         </nav>
@@ -53,7 +53,6 @@ export default function Navbar({ profile, socials }: NavbarProps) {
           {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
-
       {isOpen && (
         <div className="md:hidden absolute top-16 left-0 w-full bg-background border-b border-white/5 p-6 flex flex-col gap-6 shadow-xl">
           <div className="flex flex-col gap-4 text-lg font-medium">
