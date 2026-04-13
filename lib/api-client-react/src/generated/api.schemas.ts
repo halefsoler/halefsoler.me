@@ -73,6 +73,7 @@ export interface BrandHome {
 export interface NewsletterSubscriptionInput {
   email: string;
   name?: string;
+  phone?: string;
   source?: string;
 }
 
@@ -80,6 +81,7 @@ export interface NewsletterSubscription {
   id: number;
   email: string;
   name?: string | null;
+  phone?: string | null;
   source: string;
   createdAt: string;
 }

@@ -10,6 +10,7 @@ export interface NewsletterSubscription {
   id: number;
   email: string;
   name?: string | null;
+  phone?: string | null;
   source: string;
   createdAt: string;
 }

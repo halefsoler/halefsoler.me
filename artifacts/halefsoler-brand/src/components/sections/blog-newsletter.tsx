@@ -9,17 +9,42 @@ interface BlogNewsletterSectionProps {
   posts: BlogPost[];
 }
 
+function formatPhone(value: string): string {
+  const digits = value.replace(/\D/g, "").slice(0, 11);
+  if (digits.length <= 2) return digits;
+  if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+  return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+}
+
 export default function BlogNewsletterSection({ posts }: BlogNewsletterSectionProps) {
+  const [step, setStep] = useState<1 | 2>(1);
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const { toast } = useToast();
   const subscribe = useSubscribeNewsletter();
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
+    setStep(2);
+  };
+
+  const handleFinalSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !name) return;
+
+    const phoneDigits = phone.replace(/\D/g, "");
 
     subscribe.mutate(
-      { data: { email, source: "homepage_footer" } },
+      {
+        data: {
+          email,
+          name,
+          phone: phoneDigits || undefined,
+          source: "homepage_footer",
+        },
+      },
       {
         onSuccess: () => {
           toast({
@@ -27,14 +52,17 @@ export default function BlogNewsletterSection({ posts }: BlogNewsletterSectionPr
             description: "Obrigado por entrar na newsletter. O próximo envio chegará em breve.",
           });
           setEmail("");
+          setName("");
+          setPhone("");
+          setStep(1);
         },
         onError: (error: any) => {
           toast({
             title: "Não foi possível inscrever",
             description: error?.error?.error || "Algo deu errado. Tente novamente.",
-            variant: "destructive"
+            variant: "destructive",
           });
-        }
+        },
       }
     );
   };
@@ -83,32 +111,72 @@ export default function BlogNewsletterSection({ posts }: BlogNewsletterSectionPr
                 Receba ensaios sobre construção de produtos, marca pessoal, growth e bastidores de operação direto no seu inbox.
               </p>
               
-              <form onSubmit={handleSubscribe} className="w-full flex flex-col gap-4" id="newsletter">
-                <Input
-                  type="email"
-                  placeholder="name@example.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="h-14 rounded-full bg-black/20 border-white/10 text-center text-lg placeholder:text-muted-foreground/50 focus-visible:ring-white/20"
-                />
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="h-14 rounded-full text-base w-full group"
-                  disabled={subscribe.isPending}
-                >
-                  {subscribe.isPending ? (
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                  ) : (
-                    <>
-                      Quero receber
-                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </>
-                  )}
-                </Button>
-                <p className="text-xs text-muted-foreground mt-2">Sem spam. Saia quando quiser.</p>
-              </form>
+              {step === 1 ? (
+                <form onSubmit={handleEmailSubmit} className="w-full flex flex-col gap-4" id="newsletter">
+                  <Input
+                    type="email"
+                    placeholder="name@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="h-14 rounded-full bg-black/20 border-white/10 text-center text-lg placeholder:text-muted-foreground/50 focus-visible:ring-white/20"
+                  />
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="h-14 rounded-full text-base w-full group"
+                  >
+                    Continuar
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                  <p className="text-xs text-muted-foreground mt-2">Sem spam. Saia quando quiser.</p>
+                </form>
+              ) : (
+                <form onSubmit={handleFinalSubmit} className="w-full flex flex-col gap-4" id="newsletter">
+                  <div className="text-sm text-muted-foreground mb-2 flex items-center justify-center gap-2">
+                    <span>{email}</span>
+                    <button
+                      type="button"
+                      onClick={() => setStep(1)}
+                      className="text-primary hover:underline text-xs"
+                    >
+                      alterar
+                    </button>
+                  </div>
+                  <Input
+                    type="text"
+                    placeholder="Seu nome completo"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                    className="h-14 rounded-full bg-black/20 border-white/10 text-center text-lg placeholder:text-muted-foreground/50 focus-visible:ring-white/20"
+                    autoFocus
+                  />
+                  <Input
+                    type="tel"
+                    placeholder="(11) 99999-9999"
+                    value={phone}
+                    onChange={(e) => setPhone(formatPhone(e.target.value))}
+                    className="h-14 rounded-full bg-black/20 border-white/10 text-center text-lg placeholder:text-muted-foreground/50 focus-visible:ring-white/20"
+                  />
+                  <p className="text-xs text-muted-foreground -mt-2">Telefone opcional</p>
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="h-14 rounded-full text-base w-full group"
+                    disabled={subscribe.isPending}
+                  >
+                    {subscribe.isPending ? (
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                    ) : (
+                      <>
+                        Quero receber
+                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </Button>
+                </form>
+              )}
             </div>
           </div>
 

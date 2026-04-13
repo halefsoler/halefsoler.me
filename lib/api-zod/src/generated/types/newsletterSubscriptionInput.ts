@@ -9,5 +9,6 @@
 export interface NewsletterSubscriptionInput {
   email: string;
   name?: string;
+  phone?: string;
   source?: string;
 }

@@ -178,12 +178,14 @@ router.post("/newsletter", async (req, res): Promise<void> => {
     .values({
       email,
       name: parsed.data.name?.trim() || null,
+      phone: parsed.data.phone?.trim() || null,
       source: parsed.data.source?.trim() || "halefsoler.io",
     })
     .onConflictDoUpdate({
       target: newsletterSubscribersTable.email,
       set: {
         name: parsed.data.name?.trim() || null,
+        phone: parsed.data.phone?.trim() || null,
         source: parsed.data.source?.trim() || "halefsoler.io",
       },
     })
@@ -194,6 +196,7 @@ router.post("/newsletter", async (req, res): Promise<void> => {
       id: subscriber.id,
       email: subscriber.email,
       name: subscriber.name,
+      phone: subscriber.phone,
       source: subscriber.source,
       createdAt: subscriber.createdAt.toISOString(),
     }),

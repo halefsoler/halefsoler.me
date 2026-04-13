@@ -257,6 +257,8 @@ components:
           format: email
         name:
           type: string
+        phone:
+          type: string
         source:
           type: string
       required:
@@ -269,6 +271,9 @@ components:
         email:
           type: string
         name:
+          type: string
+          nullable: true
+        phone:
           type: string
           nullable: true
         source:

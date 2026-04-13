@@ -6,6 +6,7 @@ export const newsletterSubscribersTable = pgTable("newsletter_subscribers", {
   id: serial("id").primaryKey(),
   email: text("email").notNull().unique(),
   name: text("name"),
+  phone: text("phone"),
   source: text("source").notNull().default("halefsoler.io"),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });

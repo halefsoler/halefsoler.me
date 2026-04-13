@@ -81,6 +81,7 @@ export const GetBrandHomeResponse = zod.object({
 export const SubscribeNewsletterBody = zod.object({
   email: zod.string().email(),
   name: zod.string().optional(),
+  phone: zod.string().optional(),
   source: zod.string().optional(),
 });
 
@@ -88,6 +89,7 @@ export const SubscribeNewsletterResponse = zod.object({
   id: zod.number(),
   email: zod.string(),
   name: zod.string().nullish(),
+  phone: zod.string().nullish(),
   source: zod.string(),
   createdAt: zod.string(),
 });
