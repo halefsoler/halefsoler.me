@@ -16,7 +16,7 @@ const brandHome = {
     domain: "halefsoler.io",
     headline:
       "Construindo startups, produtos e narrativas para transformar expertise em crescimento real.",
-    bio: "Founder e operador focado em estratégia, produto, growth e comportamento. Aqui eu reúno aprendizados de startups, cases, projetos, curso e uma newsletter para pessoas que querem construir com mais clareza, velocidade e profundidade.",
+    bio: "Founder e operador focado em estratégia, produto, growth e comportamento. Aqui eu reúno aprendizados de startups, cases, projetos, cursos e uma newsletter para pessoas que querem construir com mais clareza, velocidade e profundidade.",
   },
   metrics: [
     {
