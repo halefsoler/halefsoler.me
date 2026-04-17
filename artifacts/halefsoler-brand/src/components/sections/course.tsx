@@ -67,13 +67,19 @@ export default function CourseSection({ course }: CourseSectionProps) {
             </p>
             
             {!showForm ? (
-              <Button 
-                size="lg" 
+              <Button
+                asChild
+                size="lg"
                 className="rounded-full px-8 text-base h-14 w-full sm:w-auto group"
-                onClick={() => setShowForm(true)}
               >
-                Acessar curso
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <a
+                  href="https://pay.kirvano.com/342f4264-7dff-46e9-be38-f3f947533736"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Acessar curso
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
