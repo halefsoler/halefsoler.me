@@ -72,7 +72,7 @@ export default function CourseSection({ course }: CourseSectionProps) {
                 className="rounded-full px-8 text-base h-14 w-full sm:w-auto group"
                 onClick={() => setShowForm(true)}
               >
-                Entrar na lista de espera
+                Acessar curso
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             ) : (

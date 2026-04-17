@@ -116,7 +116,7 @@ const brandHome = {
     subtitle: "Um curso para founders, especialistas e creators que querem construir autoridade composta.",
     description:
       "50 frameworks modernos de estratégia organizados em 7 módulos — todos pensados para te ajudar a ganhar tempo construindo estratégia.",
-    status: "Lista de espera aberta",
+    status: "Curso disponível",
     modules: [
       "Posicionamento e tese pessoal",
       "Arquitetura de conteúdo e escolhas",
