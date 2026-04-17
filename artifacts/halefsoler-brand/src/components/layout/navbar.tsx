@@ -41,7 +41,7 @@ export default function Navbar({ profile, socials }: NavbarProps) {
           </div>
           <div className="flex items-center gap-4 border-l border-white/10 pl-6">
             <Button variant="default" size="sm" className="rounded-full px-6 font-medium" asChild>
-              <a href="#newsletter">Cursos disponíveis</a>
+              <a href="#course">Cursos disponíveis</a>
             </Button>
           </div>
         </nav>
