@@ -56,7 +56,7 @@ export default function StartupsSection({ startups }: StartupsSectionProps) {
                     <li key={i}>
                       <Badge
                         variant="outline"
-                        className="bg-black/20 border-white/10 text-foreground/80 hover:bg-black/40 rounded-full px-3 py-1 text-xs font-normal"
+                        className="bg-black/20 border-white/10 text-foreground/80 hover:bg-black/40 rounded-full px-3 py-1 text-xs font-normal max-w-full whitespace-normal text-left break-words"
                       >
                         {outcome}
                       </Badge>
