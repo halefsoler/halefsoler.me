@@ -10,12 +10,12 @@ export default function MetricsSection({ metrics }: MetricsSectionProps) {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-white/10">
           {metrics.map((metric, index) => (
-            <div key={index} className="flex flex-col items-center text-center pt-12 md:pt-0 first:pt-0 px-4">
-              <span className="text-5xl md:text-6xl font-serif font-light tracking-tight mb-4 text-foreground">
+            <div key={index} className="flex flex-col items-center text-center pt-12 md:pt-0 first:pt-0 px-4 w-full">
+              <span className="block w-full text-center text-4xl sm:text-5xl md:text-6xl font-serif font-light tracking-tight mb-4 text-foreground break-words">
                 {metric.value}
               </span>
-              <h3 className="text-lg font-medium text-foreground mb-2">{metric.label}</h3>
-              <p className="text-sm text-muted-foreground max-w-[200px]">{metric.detail}</p>
+              <h3 className="text-lg font-medium text-foreground mb-2 text-center w-full">{metric.label}</h3>
+              <p className="text-sm text-muted-foreground max-w-[200px] text-center mx-auto">{metric.detail}</p>
             </div>
           ))}
         </div>
