@@ -38,4 +38,10 @@ Current primary web artifact is `artifacts/halefsoler-brand`, a React/Vite perso
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
 - `pnpm --filter @workspace/api-server run dev` — run API server locally
 
+## Vercel deployment
+
+- `vercel.json` at root: builds the frontend (`@workspace/halefsoler-brand`) and serves `artifacts/halefsoler-brand/dist/public`; `/api/*` rewrites to the serverless function.
+- `api/index.js` is a committed, self-contained bundle of the Express API. **After any API change, regenerate it**: `node artifacts/api-server/build.vercel.mjs` and commit.
+- Vercel needs env var `DATABASE_URL` (external Postgres, e.g. Neon).
+
 See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.

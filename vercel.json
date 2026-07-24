@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "pnpm --filter @workspace/halefsoler-brand run build",
+  "outputDirectory": "artifacts/halefsoler-brand/dist/public",
+  "framework": null,
+  "rewrites": [{ "source": "/api/(.*)", "destination": "/api/index" }]
+}
