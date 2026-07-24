@@ -10,7 +10,14 @@ if (!process.env.DATABASE_URL) {
   );
 }
 
-export const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+export const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  // In serverless (Vercel), keep connections minimal to avoid exhausting
+  // the external Postgres (e.g. Neon) connection limit during scale-out.
+  ...(process.env.VERCEL
+    ? { max: 2, idleTimeoutMillis: 10_000, connectionTimeoutMillis: 10_000 }
+    : {}),
+});
 export const db = drizzle(pool, { schema });
 
 export * from "./schema";

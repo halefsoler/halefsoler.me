@@ -51886,7 +51886,12 @@ if (!process.env.DATABASE_URL) {
     "DATABASE_URL must be set. Did you forget to provision a database?"
   );
 }
-var pool = new Pool3({ connectionString: process.env.DATABASE_URL });
+var pool = new Pool3({
+  connectionString: process.env.DATABASE_URL,
+  // In serverless (Vercel), keep connections minimal to avoid exhausting
+  // the external Postgres (e.g. Neon) connection limit during scale-out.
+  ...process.env.VERCEL ? { max: 2, idleTimeoutMillis: 1e4, connectionTimeoutMillis: 1e4 } : {}
+});
 var db = drizzle(pool, { schema: schema_exports });
 
 // node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/helpers/util.js
